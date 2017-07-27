@@ -131,7 +131,31 @@ Below are the model training visualizations for both model, the model_before and
 
 #### 2. Final Model Architecture
 
-The final model architecture (model.py lines 206-243) consisted of a convolution neural network with the following layers and layer sizes:
+My final model (model.py lines 206-243) uses the Nvidea model as a starting point:
+* Input (66x200x3 color image)
+* Conv Layer (24 filters, 5x5 kernel, strides 2x2 to 31x98x24)
+* ELU
+* Conv Layer (36 filters, 5x5 kernel, strides 2x2 to 14x47x36)
+* ELU
+* Conv Layer (48 filters, 5x5 kernel, strides 2x2 to 5x22x48)
+* ELU
+* Conv Layer (64 filters, 3x3 kernel, strides 1x1 to 3x20x64)
+* ELU
+* Conv Layer (64 filters, 3x3 kernel, strides 1x1 to 1x18x64)
+* ELU
+* Dropout 
+* Flatten (1152)
+* Fully connected layer (1152 -> 1164)
+* ELU
+* Fully connected layer (1164 -> 100)
+* ELU
+* Fully connected layer (100 -> 50)
+* ELU
+* Fully connected layer (50 -> 10)
+* ELU
+* Output (10 -> 1)
+
+Below you can find a graphical representation of the model architecture.
 
 ![alt text][model_viz]
 
